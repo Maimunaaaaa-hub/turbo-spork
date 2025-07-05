@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heyyy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('/mnt/data/62424e44-2998-4a0d-8530-4fc30f1f798d.png') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cloud-text {
+      display: none;
+    }
+
+    .real-cloud {
+      display: none;
+    }
+
+    .window {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 70%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .window.active {
+      display: flex;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .button-group button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #66b3ff;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button-group button:hover {
+      background-color: #3399ff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Windows -->
+  <div class="window active" id="window1">
+    <h2 style="font-family: 'Marcellus SC', serif; font-size: 2.5rem;">Heyyy</h2>
+    <p style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.1rem;">Hi, I don’t want to pile on but I have a little something to say...</p>
+    <div class="button-group">
+      <button onclick="nextWindow()">Okay</button>
+    </div>
+  </div>
+
+  <div class="window" id="window2">
+    <h2>10 Reasons Why You Should Go To Prom With Me:</h2>
+    <ul>
+      <li>1) I love your smile</li>
+      <li>2) I love your nose</li>
+      <li>3) I love your smell</li>
+      <li>4) I love your bhai</li>
+      <li>5) I am cool</li>
+      <li>6) I know you want to come with me too</li>
+      <li>7) I think you're cool</li>
+      <li>8) I think your mom would find me cool</li>
+      <li>9) I find your mom cool</li>
+      <li>10) I love you</li>
+    </ul>
+    <button onclick="nextWindow()">Next</button>
+  </div>
+
+  <div class="window" id="window3">
+    <h2>Will you, Rudro Raihan, accompany me to junior prom and take good photos of me?</h2>
+    <div class="button-group">
+      <button>Yes</button>
+      <button>Yes</button>
+    </div>
+  </div>
+
+  <script>
+    let current = 1;
+    function nextWindow() {
+      document.getElementById(`window${current}`).classList.remove('active');
+      current++;
+      document.getElementById(`window${current}`).classList.add('active');
+    }
+  </script>
+</body>
+</html>
